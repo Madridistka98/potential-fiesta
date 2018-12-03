@@ -1,0 +1,36 @@
+
+#include "pch.h"
+#include <conio.h>
+#include <iostream>
+
+using namespace std;
+int main ()
+{ int liczby, a=0, b=0, c=0;
+
+      do
+      {
+          cout << "Wprowadz liczbe" << endl;
+          cin >> liczby;
+               if ((a < liczby) && (b < liczby) && (c < liczby))
+                 {  b = c;
+                    c = a;
+                    a = liczby;
+                 }
+                     else if ((a > liczby)&& (b < liczby))
+                             {
+                             c = b;
+                            b = liczby;
+                                 }
+                      else  if ((a > liczby) && (b > liczby) && (c < liczby))
+                           {
+                        c = liczby;
+                         }
+      } while (liczby !=0);
+          cout << "Trzecia największa liczba to: " << c << endl;
+ 
+          
+          
+      _getch();
+           
+
+}
