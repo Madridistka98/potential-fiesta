@@ -1,0 +1,61 @@
+
+#include "pch.h"
+#include <iostream>
+#include <conio.h>
+
+using namespace std;
+
+int main()
+{
+    
+	int poczatekPrzedzialu, koniecPrzedzialu, najmniejszaLiczba, najwiekszaLiczba, kontener,
+		a1 = 1, a2 = 1, licznikNajmniejszej = 1, licznikNajwiekszej = 2;
+
+	bool najmniejszaZnaleziona = false, najwiekszaZnaleziona = false;
+
+	cout << "Podaj przedzial: " << endl;
+	cin >> poczatekPrzedzialu;
+	cin >> koniecPrzedzialu;
+
+	if (koniecPrzedzialu < 1 || koniecPrzedzialu < poczatekPrzedzialu) {
+		cout << "Nie kombinuj!";
+		_getch();
+		return 0;
+	}
+
+	do 
+	{
+		if (najmniejszaZnaleziona != true) {
+			if (a1 >= poczatekPrzedzialu) {
+				najmniejszaLiczba = a1;
+				najmniejszaZnaleziona = true;
+			}
+			else
+				licznikNajmniejszej++;
+		}
+
+		if (najwiekszaZnaleziona != true) {
+			if (a2 >= koniecPrzedzialu) {
+				if (a2 == koniecPrzedzialu)
+					najwiekszaLiczba = a2;
+				else
+					najwiekszaLiczba = a1;
+				najwiekszaZnaleziona = true;
+			}
+			else
+				licznikNajwiekszej++;
+		}
+
+		kontener = a2 + a1;
+		a1 = a2;
+		a2 = kontener;
+
+	} while (a1 <= koniecPrzedzialu);
+
+	cout << "Najmniejsza liczba w przedziale to " << najmniejszaLiczba << " jest na miejscu " << licznikNajmniejszej << endl;
+	cout << "Najwieksza liczba w przedziale to " << najwiekszaLiczba << " jest na miejscu " << licznikNajwiekszej << endl;
+
+
+	_getch();
+	return 0;
+}
