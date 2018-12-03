@@ -1,0 +1,27 @@
+#include <cstdlib>
+#include <iostream>
+Include ”pch.h”
+using namespace std;
+
+
+void na_dwojkowy(int liczba)
+{
+    int reszta = liczba % 2;
+    
+    if(liczba>1)
+    {
+        na_dwojkowy(liczba/2);
+    }    
+    
+    cout<<reszta;
+}
+
+int main(int argc, char** argv) {
+
+    int liczba;
+    cin>>liczba;
+    na_dwojkowy(liczba);
+    
+_getch(); 
+return 0;
+}
